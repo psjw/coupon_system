@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: coupon
+
+
+snowflake:
+  epoch: 1749826800000 #2025-06-13T15:00:00Z (UTC)
+  node-id: 1
+  timeout-ms: 5000
+  max-attempts: 1000
