@@ -4,8 +4,8 @@
   "settings": {
     "width": 2500,
     "height": 2500,
-    "scrollTop": -1133.6571,
-    "scrollLeft": -458.9484,
+    "scrollTop": 0,
+    "scrollLeft": -854.9484,
     "zoomLevel": 1,
     "show": 431,
     "database": 4,
@@ -360,7 +360,7 @@
           "7ODkUSkR2WWGVHGXS6Yyo"
         ],
         "ui": {
-          "x": 1897,
+          "x": 1939,
           "y": 957,
           "zIndex": 1114,
           "widthName": 116,
@@ -368,7 +368,7 @@
           "color": ""
         },
         "meta": {
-          "updateAt": 1750260030577,
+          "updateAt": 1750063681304,
           "createAt": 1750061924851
         }
       },
@@ -683,17 +683,17 @@
         "name": "member_status",
         "comment": "회원 상태 (ACTIVE, WITHDRAWN, SUSPENDED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'ACTIVE'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 90,
           "widthComment": 264,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 106
         },
         "meta": {
-          "updateAt": 1750260018541,
+          "updateAt": 1750056338431,
           "createAt": 1750056150671
         }
       },
@@ -703,17 +703,17 @@
         "name": "login_type",
         "comment": "로그인 유형 (LOCAL, KAKAO, GOOGLE, NAVER)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'LOCAL'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 61,
           "widthComment": 260,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 103
         },
         "meta": {
-          "updateAt": 1750260019434,
+          "updateAt": 1750056345171,
           "createAt": 1750056150891
         }
       },
@@ -723,17 +723,17 @@
         "name": "grade",
         "comment": "ENUM(‘BASIC’, ‘VIP’, ‘EMPLOYEE’)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'BASIC'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 60,
           "widthComment": 194,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 100
         },
         "meta": {
-          "updateAt": 1750260020462,
+          "updateAt": 1750056585667,
           "createAt": 1750056151055
         }
       },
@@ -763,17 +763,17 @@
         "name": "blacklisted",
         "comment": "블랙리스트 여부",
         "dataType": "BOOLEAN",
-        "default": "",
+        "default": "DEFAULT FALSE",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 63,
           "widthComment": 78,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 94
         },
         "meta": {
-          "updateAt": 1750260021489,
+          "updateAt": 1750056623926,
           "createAt": 1750056364297
         }
       },
@@ -1003,17 +1003,17 @@
         "name": "event_status",
         "comment": "이벤트 상태(READY, IN_PROGRESS, FINISHED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'READY'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 75,
           "widthComment": 256,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 104
         },
         "meta": {
-          "updateAt": 1750259995716,
+          "updateAt": 1750057467975,
           "createAt": 1750056757900
         }
       },
@@ -1083,17 +1083,17 @@
         "name": "updated_by",
         "comment": "수정자",
         "dataType": "VARCHAR(50)",
-        "default": "",
+        "default": "NULLABLE",
         "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 69,
           "widthComment": 60,
           "widthDataType": 83,
-          "widthDefault": 60
+          "widthDefault": 63
         },
         "meta": {
-          "updateAt": 1750260002748,
+          "updateAt": 1750057545963,
           "createAt": 1750057462691
         }
       },
@@ -1283,17 +1283,17 @@
         "name": "inventory_status",
         "comment": "쿠폰 상태 - 수동 변경 (READY, ONGOING, END)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'READY'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 95,
           "widthComment": 251,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 104
         },
         "meta": {
-          "updateAt": 1750260004791,
+          "updateAt": 1750058491369,
           "createAt": 1750058337756
         }
       },
@@ -1423,17 +1423,17 @@
         "name": "issue_type",
         "comment": "자체발급 / 제휴매핑 발급 구분(SELF,MAPPED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'SELF'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 63,
           "widthComment": 234,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 93
         },
         "meta": {
-          "updateAt": 1750259991644,
+          "updateAt": 1750060207580,
           "createAt": 1750059940703
         }
       },
@@ -1523,17 +1523,17 @@
         "name": "batch_status",
         "comment": "이벤트 상태(PENDING, READY, DISABLED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'READY'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 76,
           "widthComment": 230,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 104
         },
         "meta": {
-          "updateAt": 1750259990688,
+          "updateAt": 1750060251246,
           "createAt": 1750060214859
         }
       },
@@ -1623,17 +1623,17 @@
         "name": "coupon_id",
         "comment": "내부용 surrogate key",
         "dataType": "BIGINT",
-        "default": "",
+        "default": "AUTO_INCREMENT",
         "options": 10,
         "ui": {
           "keys": 1,
           "widthName": 62,
           "widthComment": 114,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 112
         },
         "meta": {
-          "updateAt": 1750259970560,
+          "updateAt": 1750061374938,
           "createAt": 1750060317729
         }
       },
@@ -1683,17 +1683,17 @@
         "name": "code_status",
         "comment": "쿠폰 상태 (AVAILABLE, ISSUED, USED, EXPIRED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'AVAILABLE'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 72,
           "widthComment": 267,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 127
         },
         "meta": {
-          "updateAt": 1750259965603,
+          "updateAt": 1750061500372,
           "createAt": 1750060318270
         }
       },
@@ -1964,7 +1964,7 @@
         "comment": "쿠폰 코드 업로드 시각",
         "dataType": "DATETIME",
         "default": "",
-        "options": 0,
+        "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 73,
@@ -1973,7 +1973,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750352984720,
+          "updateAt": 1750061727290,
           "createAt": 1750061643960
         }
       },
@@ -2183,17 +2183,17 @@
         "name": "mapping_status",
         "comment": "매핑 상태 (MAPPED, FAILED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'MAPPED'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 93,
           "widthComment": 156,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 115
         },
         "meta": {
-          "updateAt": 1750259986990,
+          "updateAt": 1750062150105,
           "createAt": 1750062133082
         }
       },
@@ -2323,17 +2323,17 @@
         "name": "issue_type",
         "comment": "자체발급 / 제휴매핑 발급 구분(SELF,MAPPED)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'SELF'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 63,
           "widthComment": 234,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 93
         },
         "meta": {
-          "updateAt": 1750260006110,
+          "updateAt": 1750062676272,
           "createAt": 1750062320467
         }
       },
@@ -2403,17 +2403,17 @@
         "name": "is_canceled",
         "comment": "쿠폰 발급 취소 여부",
         "dataType": "BOOLEAN",
-        "default": "",
+        "default": "DEFAULT FALSE",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 69,
           "widthComment": 95,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 94
         },
         "meta": {
-          "updateAt": 1750260010690,
+          "updateAt": 1750062759310,
           "createAt": 1750062717049
         }
       },
@@ -2583,17 +2583,17 @@
         "name": "used_channel",
         "comment": "쿠폰 사용 채널 (APP, WEB, OFFLINE)",
         "dataType": "VARCHAR(50)",
-        "default": "",
+        "default": "DEFAULT 'WEB'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 80,
           "widthComment": 195,
           "widthDataType": 83,
-          "widthDefault": 60
+          "widthDefault": 92
         },
         "meta": {
-          "updateAt": 1750259973509,
+          "updateAt": 1750063098669,
           "createAt": 1750062934815
         }
       },
@@ -2764,7 +2764,7 @@
         "comment": "생성 시각",
         "dataType": "DATETIME",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 63,
@@ -2773,7 +2773,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260065545,
+          "updateAt": 1750063544677,
           "createAt": 1750063209052
         }
       },
@@ -2844,7 +2844,7 @@
         "comment": "생성자",
         "dataType": "VARCHAR(50)",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 66,
@@ -2853,7 +2853,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260066242,
+          "updateAt": 1750063547379,
           "createAt": 1750063473443
         }
       },
@@ -2864,7 +2864,7 @@
         "comment": "수정 시각",
         "dataType": "DATETIME",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 67,
@@ -2873,7 +2873,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260066827,
+          "updateAt": 1750063910144,
           "createAt": 1750063473657
         }
       },
@@ -2923,17 +2923,17 @@
         "name": "prize_type",
         "comment": "당첨된 상품 타입(POINT, COFFEE)",
         "dataType": "ENUM",
-        "default": "",
-        "options": 8,
+        "default": "DEFAULT 'POINT'",
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 62,
           "widthComment": 179,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 101
         },
         "meta": {
-          "updateAt": 1750260088086,
+          "updateAt": 1750063761666,
           "createAt": 1750063599209
         }
       },
@@ -3123,17 +3123,17 @@
         "name": "policy_type",
         "comment": "할인유형(FIXED, PERCENT)",
         "dataType": "ENUM",
-        "default": "",
+        "default": "DEFAULT 'FIXED'",
         "options": 8,
         "ui": {
           "keys": 0,
           "widthName": 67,
           "widthComment": 148,
           "widthDataType": 60,
-          "widthDefault": 60
+          "widthDefault": 99
         },
         "meta": {
-          "updateAt": 1750259977285,
+          "updateAt": 1750064100735,
           "createAt": 1750064052052
         }
       },
@@ -3244,7 +3244,7 @@
         "comment": "생성 시각",
         "dataType": "DATETIME",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 63,
@@ -3253,7 +3253,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260104713,
+          "updateAt": 1750064531394,
           "createAt": 1750064201089
         }
       },
@@ -3264,7 +3264,7 @@
         "comment": "생성자",
         "dataType": "VARCHAR(50)",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 66,
@@ -3273,7 +3273,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260105357,
+          "updateAt": 1750064534441,
           "createAt": 1750064373852
         }
       },
@@ -3284,7 +3284,7 @@
         "comment": "수정 시각",
         "dataType": "DATETIME",
         "default": "",
-        "options": 8,
+        "options": 0,
         "ui": {
           "keys": 0,
           "widthName": 67,
@@ -3293,7 +3293,7 @@
           "widthDefault": 60
         },
         "meta": {
-          "updateAt": 1750260106229,
+          "updateAt": 1750064537932,
           "createAt": 1750064489043
         }
       },
@@ -3394,7 +3394,7 @@
           "columnIds": [
             "-Nrhdtd49M5LkNJPLV3kD"
           ],
-          "x": 1749,
+          "x": 1816,
           "y": 1035.8129,
           "direction": 2
         },
@@ -3422,7 +3422,7 @@
           "columnIds": [
             "QVqdzQziP3c5Qe6cGPD6l"
           ],
-          "x": 2189.5,
+          "x": 2233,
           "y": 1205,
           "direction": 8
         },
@@ -3469,7 +3469,7 @@
           "columnIds": [
             "WehhmWAF6-R51ocfWheie"
           ],
-          "x": 1749,
+          "x": 1816,
           "y": 1183.8129,
           "direction": 2
         },
@@ -3478,7 +3478,7 @@
           "columnIds": [
             "hZOu-DZnQk9393Gq-ObfX"
           ],
-          "x": 1897,
+          "x": 1939,
           "y": 1081,
           "direction": 1
         },
@@ -3497,7 +3497,7 @@
           "columnIds": [
             "pyB395TBYypYNfB8uiboz"
           ],
-          "x": 529.8333333333334,
+          "x": 537.5,
           "y": 1384,
           "direction": 4
         },
@@ -3553,7 +3553,7 @@
           "columnIds": [
             "pyB395TBYypYNfB8uiboz"
           ],
-          "x": 1054,
+          "x": 1100,
           "y": 1604,
           "direction": 2
         },
@@ -3581,7 +3581,7 @@
           "columnIds": [
             "WehhmWAF6-R51ocfWheie"
           ],
-          "x": 1442,
+          "x": 1475.5,
           "y": 1257.8129,
           "direction": 8
         },
@@ -3637,7 +3637,7 @@
           "columnIds": [
             "pyB395TBYypYNfB8uiboz"
           ],
-          "x": 739.5,
+          "x": 762.5,
           "y": 1384,
           "direction": 4
         },
@@ -3721,7 +3721,7 @@
           "columnIds": [
             "pyB395TBYypYNfB8uiboz"
           ],
-          "x": 949.1666666666666,
+          "x": 987.5,
           "y": 1384,
           "direction": 4
         },
