@@ -34,4 +34,18 @@ public class Event extends BaseAuditEntity {
     @Column(nullable = false)
     private EventStatus eventStatus;
 
+
+    public void changeStatus(EventStatus newStatus) {
+        if (this.canChangeTo(newStatus)){
+            throw new IllegalStateException("허용되지 않는 상태 변경입니다.");
+        }
+        this.eventStatus = newStatus;
+    }
+
+    private boolean canChangeTo(EventStatus newStatus) {
+        if (this.eventStatus == EventStatus.FINISHED) return false;
+        if (this.eventStatus == newStatus) return false;
+        return true;
+    }
 }
+
