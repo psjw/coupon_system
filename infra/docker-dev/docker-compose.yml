@@ -1,0 +1,12 @@
+services:
+  coupon-db:
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: coupon
+      MYSQL_USER: coupon_user
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - ./mysql_data:/var/lib/mysql
