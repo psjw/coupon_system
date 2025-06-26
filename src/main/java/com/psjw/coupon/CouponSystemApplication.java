@@ -1,4 +1,4 @@
-package com.psjw.coupon_system;
+package com.psjw.coupon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
