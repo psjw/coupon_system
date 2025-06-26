@@ -17,8 +17,9 @@ created: 2025-06-21
 | Status Code | HTTP 상태 코드 준수 (200, 400, 401 등) |
 
 ---
-
 # 📦 Event 도메인 - 관리자 API 명세서
+
+
 
 ## ✅ 1. 이벤트 생성
 ### ▶️ **POST /api/v1/admin/events**
@@ -38,9 +39,11 @@ created: 2025-06-21
   "description": "다른 회사와 협업",
   "fromAt": "2025-06-21T09:00:00",
   "untilAt": "2025-06-21T21:00:00",
-  "eventStatus": "READY"
+  "eventStatus": "READY" 
 }
 ```
+> ℹ️ `eventStatus` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### 📤 Response Body
 ```json
@@ -50,6 +53,7 @@ created: 2025-06-21
   "eventStatus": "READY"
 }
 ```
+
 
 ### ❗ 예외 상황 및 상태 코드
 
@@ -99,6 +103,8 @@ created: 2025-06-21
   "eventStatus": "READY"
 }
 ```
+> ℹ️ `eventStatus` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### 📤 Response Body
 ```json
@@ -157,6 +163,8 @@ created: 2025-06-21
   "eventStatus": "FINISHED"
 }
 ```
+> ℹ️ `eventStatus` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### 📤 Response Body
 ```json
@@ -166,7 +174,6 @@ created: 2025-06-21
   "updatedAt": "2025-06-21T10:50:00"
 }
 ```
-
 
 ### ❗ 예외 상황 및 상태 코드
 
@@ -277,6 +284,7 @@ created: 2025-06-21
 }
 ```
 
+
 ### ❗ 예외 상황 및 상태 코드
 
 | 상태코드   | 에러 코드              | 메시지                 | 발생 조건 예시    |
@@ -304,7 +312,7 @@ created: 2025-06-21
 
 
 
-## ✅ 5. 이벤트 목록 조회
+## ✅ 6. 이벤트 목록 조회
 ### ▶️ **GET /api/v1/admin/events**
 
 | 항목       | 설명                     |
@@ -392,7 +400,7 @@ created: 2025-06-21
 
 ---
 
-# 📦 Event 도메인 - 쿠폰 API 명세서
+# 📦 Coupon 도메인 - 쿠폰 API 명세서
 
 ## ✅ 1. 쿠폰재고 생성
 ### ▶️ **POST /api/v1/admin/coupon-inventories**
@@ -416,6 +424,10 @@ created: 2025-06-21
   "inventoryStatus": "READY"
 }
 ```
+
+> ℹ️ `inventoryStatus` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
+
 
 ### 📤 Response Body
 ```json
@@ -479,6 +491,9 @@ created: 2025-06-21
   "inventoryStatus": "READY"
 }
 ```
+
+> ℹ️ `inventoryStatus` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### 📤 Response Body
 ```json
@@ -751,6 +766,10 @@ created: 2025-06-21
 }
 ```
 
+> ℹ️ `batchStatus`, `issueType` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
+
+
 ### 📤 Response Body
 ```json
 {
@@ -816,6 +835,8 @@ created: 2025-06-21
   "batchStatus": "READY"
 }
 ```
+> ℹ️ `batchStatus`, `issueType` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### 📤 Response Body
 ```json
@@ -1092,6 +1113,8 @@ created: 2025-06-21
   "message": "쿠폰 생성 작업이 수락되었습니다. 상태는 jobId를 통해 조회하세요."
 }
 ```
+> ℹ️ `jobStatus`, `jobType` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
 
 ### ❗ 예외 상황 및 상태 코드
 
@@ -1117,4 +1140,179 @@ created: 2025-06-21
   "path": "/api/v1/admin/coupon-batches/234/generate-coupons"
 }
 ```
+---
+
+## ✅ 12. 쿠폰 생성 작업 상태 조회
+### ▶️ **GET /api/v1/admin/coupon-jobs/{jobId}**
+
+| 항목       | 설명                                  |
+|------------|-------------------------------------|
+| Method     | POST                                |
+| Path       | `/api/v1/admin/coupon-jobs/{jobId}` |
+| 인증       | 필요 (Bearer Token)                   |
+| 설명       | 관리자가 쿠폰 생성 작업의 상태를 조회함              |
+
+### 📥 Request Body
+
+> 없음
+
+### 📤 Response Body
+```json
+{
+  "jobId": "1457689783921571840",
+  "jobType": "COUPON_GENERATE",
+  "jobStatus": "IN_PROGRESS",
+  "createdAt": "2025-06-22T14:00:00",
+  "updatedAt": "2025-06-22T14:01:30",
+  "message": "쿠폰 생성이 진행 중입니다."
+}
+```
+> ℹ️ `jobStatus`, `jobType` 값은 [공통 Type 및 Status 정의](#-공통-type-및-status-정의)를 참조하세요.
+
+
+### ❗ 예외 상황 및 상태 코드
+
+| 상태코드 | 에러 코드                  | 메시지                  | 발생 조건 예시           |
+|------|------------------------|----------------------|--------------------|
+| 400  | `INVALID_REQUEST`      | 요청 필드가 유효하지 않습니다.    | 필수 값 누락, 데이터 형식 오류 |
+| 401  | `UNAUTHORIZED`         | 인증 정보가 없습니다.         | JWT 누락 또는 만료       |
+| 403  | `FORBIDDEN`            | 관리자 권한이 필요합니다.       | `ROLE_ADMIN` 미보유   |
+| 404    | `JOB_NOT_FOUND`       | 쿠폰 생성 작업을 찾을 수 없습니다. | 잘못된 jobId          |
+| 500  | `INTERNAL_SERVER_ERROR` | 서버 내부 오류가 발생했습니다.    | DB 예외, 알 수 없는 예외 등 |
+
+---
+
+### 📤 에러 응답 예시
+
+```json
+{
+  "timestamp": "2025-06-21T10:00:00",
+  "status": 404,
+  "error": "Not Found",
+  "code": "JOB_NOT_FOUND",
+  "message": "쿠폰 생성 작업을 찾을 수 없습니다.",
+  "path": "/api/v1/admin/coupon-jobs/1457689783921571840"
+}
+```
+---
+
+
+# 📘 공통 Type 및 Status 정의
+
+## ✅ EventStatus
+
+| 상태        | 설명                              |
+|-------------|-----------------------------------|
+| READY       | 이벤트 시작 전 대기 상태                 |
+| ONGOING     | 이벤트가 현재 진행 중인 상태             |
+| COMPLETED   | 이벤트가 정상적으로 종료된 상태           |
+| DISABLED    | 관리자가 비활성화한 상태 (삭제 또는 중단)     |
+
+
+---
+
+## ✅ InventoryStatus
+
+| 상태      | 설명                                |
+|-----------|-------------------------------------|
+| READY     | 쿠폰 발급 준비가 완료된 상태                  |
+| ONGOING   | 발급이 진행 중인 상태                        |
+| END       | 발급이 완료되어 종료된 상태                  |
+
+---
+
+## ✅ BatchStatus
+
+| 상태        | 설명                                          |
+|-------------|-----------------------------------------------|
+| PENDING     | 회차 정보가 생성되었지만 아직 활성화되지 않은 상태             |
+| READY       | 회차가 발급 준비 완료된 상태                          |
+| DISABLED    | 관리자가 회차를 비활성화하여 더 이상 발급되지 않는 상태         |
+
+---
+
+## ✅ JobStatus
+
+| 상태        | 설명                                        |
+|-------------|---------------------------------------------|
+| PENDING     | 작업이 대기 중인 상태                      |
+| IN_PROGRESS | 현재 작업이 처리 중인 상태                       |
+| COMPLETED   | 작업이 성공적으로 완료된 상태                     |
+| FAILED      | 작업 처리 중 오류로 인해 실패한 상태               |
+| CANCELLED   | 관리자가 수동으로 작업을 중단하거나 취소한 상태         |
+
+
+## ✅ CodeStatus
+
+| 상태      | 설명                                                       |
+|-----------|------------------------------------------------------------|
+| AVAILABLE | 발급되지 않고 재고로 존재하는 쿠폰 코드 (사용 가능)                  |
+| ISSUED    | 사용자에게 발급된 쿠폰 코드 (아직 사용되지 않음)                      |
+| USED      | 사용자가 실제로 쿠폰을 사용한 상태                                  |
+| EXPIRED   | 유효 기간이 지나 사용 불가능해진 상태 (자동 만료 처리됨)                   |
+
+
+
+## ✅ IssueStatus
+
+| 상태      | 설명                                                 |
+|-----------|------------------------------------------------------|
+| PENDING   | 발급 요청이 접수되어 대기 중인 상태                               |
+| COMPLETED | 쿠폰 발급이 성공적으로 완료된 상태                              |
+| CANCELED  | 사용자의 요청 또는 시스템 정책에 따라 발급 요청이 취소된 상태             |
+| EXPIRED   | 유효 기간이 지나 발급이 무효 처리된 상태                          |
+
+
+---
+
+## ✅ MappingStatus
+
+| 상태    | 설명                                      |
+|---------|-------------------------------------------|
+| MAPPED  | 외부 시스템(제휴사 등)과의 매핑이 정상적으로 완료된 상태           |
+| FAILED  | 매핑 처리 중 오류가 발생하여 실패한 상태                    |
+
+---
+
+
+## ✅ UserChannel
+
+| 채널      | 설명                                 |
+|-----------|--------------------------------------|
+| WEB       | 웹사이트 또는 웹 기반 플랫폼에서 유입된 사용자            |
+| APP       | 모바일 앱(Android, iOS)에서 유입된 사용자          |
+| OFFLINE   | 오프라인 매장, 이벤트 현장 등에서 유입된 사용자         |
+
+
+
+---
+
+
+## ✅ JobType
+
+| 유형                    | 설명                                 |
+|-------------------------|--------------------------------------|
+| COUPON_GENERATION       | 내부 시스템을 통한 대량 쿠폰 생성 작업                |
+| PARTNER_COUPON_UPLOAD   | 제휴사로부터 받은 쿠폰 데이터를 업로드 및 등록하는 작업     |
+
+---
+
+## ✅ IssueType
+
+| 유형     | 설명                                                 |
+|----------|------------------------------------------------------|
+| SELF     | 사용자가 직접 앱/웹 등을 통해 요청하여 발급받는 쿠폰                  |
+| MAPPED   | 제휴사 또는 내부 정책에 따라 특정 사용자에게 자동 또는 수동으로 발급되는 쿠폰 |
+
+---
+
+
+## ✅ PrizeType
+
+| 유형    | 설명     |
+|---------|----------|
+| POINT   | 포인트 보상 |
+| COUPON  | 쿠폰 보상  |
+
+
 ---
