@@ -1,4 +1,4 @@
-package com.psjw.coupon_system;
+package com.psjw.coupon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
