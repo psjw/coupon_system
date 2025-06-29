@@ -1,8 +1,8 @@
 package com.psjw.coupon.infrastructure.support.id;
 
-import com.psjw.coupon.common.error.id.InvalidNodeIdException;
-import com.psjw.coupon.common.error.id.InvalidSystemClockException;
-import com.psjw.coupon.common.error.id.SnowflakeTimeoutException;
+import com.psjw.coupon.common.exception.id.InvalidNodeIdException;
+import com.psjw.coupon.common.exception.id.InvalidSystemClockException;
+import com.psjw.coupon.common.exception.id.SnowflakeTimeoutException;
 import com.psjw.coupon.common.id.IdGenerator;
 import com.psjw.coupon.common.time.TimeProvider;
 import java.util.concurrent.atomic.AtomicLong;
