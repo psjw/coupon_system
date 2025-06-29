@@ -1,6 +1,8 @@
 spring:
   application:
     name: coupon
+  jpa:
+    open-in-view: false  # 트랜잭션 범위 외 지연 로딩 방지 (OSIV 비활성화)
 
 
 snowflake:
