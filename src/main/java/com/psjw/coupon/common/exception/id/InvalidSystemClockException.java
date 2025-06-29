@@ -1,4 +1,4 @@
-package com.psjw.coupon.common.error.id;
+package com.psjw.coupon.common.exception.id;
 
 public class InvalidSystemClockException extends RuntimeException {
     public InvalidSystemClockException(long nodeId, long currentTime) {
