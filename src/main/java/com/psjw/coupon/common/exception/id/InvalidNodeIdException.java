@@ -1,4 +1,4 @@
-package com.psjw.coupon.common.error.id;
+package com.psjw.coupon.common.exception.id;
 
 public class InvalidNodeIdException extends RuntimeException{
     public InvalidNodeIdException(long nodeId, long maxNodeId) {
