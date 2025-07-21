@@ -17,6 +17,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -64,7 +65,26 @@ public class CouponBatchJob extends BaseAuditEntity {
 
     private String errorLogPath;
 
-    public boolean isInProgress(){
+    public boolean isInProgress() {
         return this.jobStatus == JobStatus.IN_PROGRESS;
+    }
+
+    @Builder
+    private CouponBatchJob(CouponBatch couponBatch, JobType jobType, JobStatus jobStatus, Integer totalCount, Integer failureCount, Integer successCount) {
+        this.couponBatch = couponBatch;
+        this.jobType = jobType;
+        this.jobStatus = jobStatus;
+        this.totalCount = totalCount;
+    }
+
+    public static CouponBatchJob createNew(CouponBatch batch, JobType type, String requestedBy, int totalCount) {
+        return CouponBatchJob.builder()
+                .couponBatch(batch)
+                .jobType(type)
+                .jobStatus(JobStatus.PENDING)
+                .totalCount(totalCount)
+                .failureCount(0)
+                .successCount(0)
+                .build();
     }
 }
