@@ -14,7 +14,7 @@ public class JpaCouponBatchJobRepository implements CouponBatchJobRepository {
     private final CouponBatchJobRepository couponBatchJobRepository;
 
     @Override
-    public Optional<CouponBatchJob> save(CouponBatchJob couponBatchJob) {
+    public CouponBatchJob save(CouponBatchJob couponBatchJob) {
         return couponBatchJobRepository.save(couponBatchJob);
     }
 
