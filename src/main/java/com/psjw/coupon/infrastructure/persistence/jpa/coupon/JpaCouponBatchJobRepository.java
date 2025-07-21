@@ -6,13 +6,15 @@ import com.psjw.coupon.domain.repository.coupon.CouponBatchRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class JpaCouponBatchJobRepository implements CouponBatchJobRepository {
     private final CouponBatchJobRepository couponBatchJobRepository;
 
     @Override
-    public CouponBatchJob save(CouponBatchJob couponBatchJob) {
+    public Optional<CouponBatchJob> save(CouponBatchJob couponBatchJob) {
         return couponBatchJobRepository.save(couponBatchJob);
     }
 
@@ -22,7 +24,7 @@ public class JpaCouponBatchJobRepository implements CouponBatchJobRepository {
     }
 
     @Override
-    public CouponBatchJob findById(Long jobId) {
+    public Optional<CouponBatchJob> findById(Long jobId) {
         return couponBatchJobRepository.findById(jobId);
     }
 }
