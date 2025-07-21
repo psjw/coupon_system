@@ -64,5 +64,7 @@ public class CouponBatchJob extends BaseAuditEntity {
 
     private String errorLogPath;
 
-
+    public boolean isInProgress(){
+        return this.jobStatus == JobStatus.IN_PROGRESS;
+    }
 }
