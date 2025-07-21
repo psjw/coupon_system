@@ -44,6 +44,7 @@ public enum ErrorCode {
             "쿠폰 재고 회차를 찾을 수 없습니다."),
     COUPON_JOB_NOT_FOUND(HttpStatus.NOT_FOUND, "Coupon Job Not Found",
             "쿠폰 셍성 작업을 찾을 수 없습니다."),
+    DUPLICATE_BATCH_JOB_REQUEST(HttpStatus.CONFLICT, "Duplicate Batch Jon Request", "이미 실행 중인 쿠폰 생성작업이 존재합니다.")
     ;
 
     private final HttpStatus status;
