@@ -44,6 +44,11 @@ public class JpaCouponCodeRepository implements CouponCodeRepository {
     }
 
     @Override
+    public List<CouponCode> saveAll(List<CouponCode> couponCodes) {
+        return couponCodeJpaRepository.saveAll(couponCodes);
+    }
+
+    @Override
     public void delete(CouponCode couponCode) {
         couponCodeJpaRepository.delete(couponCode);
     }
