@@ -19,5 +19,6 @@ public interface CouponCodeRepository {
     boolean existsByCouponCode(String couponCode);
 
     CouponCode save(CouponCode couponCode);
+    List<CouponCode> saveAll(List<CouponCode> couponCodes);
     void delete(CouponCode couponCode);
 }
