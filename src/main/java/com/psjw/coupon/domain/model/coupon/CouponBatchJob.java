@@ -70,19 +70,29 @@ public class CouponBatchJob extends BaseAuditEntity {
     }
 
     @Builder
-    private CouponBatchJob(CouponBatch couponBatch, JobType jobType, JobStatus jobStatus, Integer totalCount, Integer failureCount, Integer successCount) {
+    private CouponBatchJob(CouponBatch couponBatch, JobType jobType, JobStatus jobStatus, String requestedBy, LocalDateTime requestedAt, LocalDateTime completedAt, Long id, Integer totalCount, Integer successCount, Integer failureCount, String errorMessage, String errorLogPath) {
         this.couponBatch = couponBatch;
         this.jobType = jobType;
         this.jobStatus = jobStatus;
+        this.requestedBy = requestedBy;
+        this.requestedAt = requestedAt;
+        this.completedAt = completedAt;
+        this.id = id;
         this.totalCount = totalCount;
+        this.successCount = successCount;
+        this.failureCount = failureCount;
+        this.errorMessage = errorMessage;
+        this.errorLogPath = errorLogPath;
     }
 
+    @Builder
     public static CouponBatchJob createNew(CouponBatch batch, JobType type, String requestedBy, int totalCount) {
         return CouponBatchJob.builder()
                 .couponBatch(batch)
                 .jobType(type)
                 .jobStatus(JobStatus.PENDING)
                 .totalCount(totalCount)
+                .requestedBy(requestedBy)
                 .failureCount(0)
                 .successCount(0)
                 .build();
