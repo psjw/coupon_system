@@ -28,6 +28,7 @@ public enum ErrorCode {
     //쿠폰 관련
     MAX_COUPON_LIMIT_EXCEEDED(HttpStatus.BAD_REQUEST, "Max Coupon Limit Exceeded",
             "생성 가능한 최대 쿠폰 수를 초과했습니다."),
+    INVALID_COUPON_COUNT(HttpStatus.BAD_REQUEST, "Invalid Coupon Count", "쿠폰 수량이 올바르지 않습니다."),
     INVENTORY_INVALID_PERIOD(HttpStatus.BAD_REQUEST, "Inventory Invalid Period",
             "쿠폰 유효기간의 시작 시간은 종료 시간보다 이전이어야 합니다."),
     CANNOT_MODIFY_COUPON_INVENTORY(HttpStatus.BAD_REQUEST, "Cannot Modify Coupon Inventory",
