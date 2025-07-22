@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,6 +29,7 @@ import lombok.NoArgsConstructor;
                 @UniqueConstraint(name = "uq_coupon_code_coupon_batch", columnNames = {"coupon_code", "batch_id"})
         }
 )
+@BatchSize(size = 1_000)
 public class CouponCode extends BaseAuditEntity {
 
     @Id
