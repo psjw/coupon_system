@@ -15,8 +15,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+
 import java.time.LocalDateTime;
+
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.BatchSize;
@@ -33,7 +36,6 @@ import org.hibernate.annotations.BatchSize;
 public class CouponCode extends BaseAuditEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coupon_id")
     private Long id;
 
@@ -48,6 +50,8 @@ public class CouponCode extends BaseAuditEntity {
     @Column(nullable = false)
     private CodeStatus codeStatus;
 
+
+    @Column(nullable = false)
     private LocalDateTime issuedAt;
 
     private LocalDateTime expiredAt;
@@ -55,5 +59,25 @@ public class CouponCode extends BaseAuditEntity {
     @OneToOne(mappedBy = "couponCode")
     private CouponMapping couponMapping;
 
+    @Builder
+    private CouponCode(Long id, String couponCode, CouponBatch couponBatch, CodeStatus codeStatus, LocalDateTime issuedAt, LocalDateTime expiredAt, CouponMapping couponMapping) {
+        this.id = id;
+        this.couponCode = couponCode;
+        this.couponBatch = couponBatch;
+        this.codeStatus = codeStatus;
+        this.issuedAt = issuedAt;
+        this.expiredAt = expiredAt;
+        this.couponMapping = couponMapping;
+    }
+
+    public static CouponCode createCoupon(Long id, String code, CouponBatch batch) {
+        return CouponCode.builder()
+                .id(id)
+                .couponCode(code)
+                .couponBatch(batch)
+                .codeStatus(CodeStatus.AVAILABLE)
+                .issuedAt(LocalDateTime.now())
+                .build();
+    }
 
 }
