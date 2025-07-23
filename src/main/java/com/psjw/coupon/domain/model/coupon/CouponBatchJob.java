@@ -91,14 +91,16 @@ public class CouponBatchJob extends BaseAuditEntity {
         this.errorLogPath = errorLogPath;
     }
 
-    public static CouponBatchJob createNew(CouponBatch batch, JobType type, String requestedBy, int totalCount) {
+    public static CouponBatchJob createNew(CouponBatch batch, JobType type, String requestedBy,
+                                           LocalDateTime requestedAt,
+                                           int totalCount) {
         return CouponBatchJob.builder()
                 .couponBatch(batch)
                 .jobType(type)
                 .jobStatus(JobStatus.PENDING)
                 .totalCount(totalCount)
                 .requestedBy(requestedBy)
-                .requestedAt(LocalDateTime.now())
+                .requestedAt(requestedAt)
                 .failureCount(0)
                 .successCount(0)
                 .build();
@@ -123,10 +125,10 @@ public class CouponBatchJob extends BaseAuditEntity {
         this.jobStatus = JobStatus.IN_PROGRESS;
     }
 
-    public void changeCompleted() {
+    public void changeCompleted(LocalDateTime completedAt) {
         assertTransitionAllowed(JobStatus.IN_PROGRESS);
         this.jobStatus = JobStatus.COMPLETED;
-        this.completedAt = LocalDateTime.now();
+        this.completedAt = completedAt;
     }
 
     public void changeFailed() {
