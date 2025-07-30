@@ -38,7 +38,7 @@ public class PartnerCoupon extends BaseAuditEntity {
 
     private String uploadedBy;
 
-    @OneToOne(mappedBy = "couponMapping")
+    @OneToOne(mappedBy = "partnerCoupon")
     private CouponMapping couponMapping;
 
 }

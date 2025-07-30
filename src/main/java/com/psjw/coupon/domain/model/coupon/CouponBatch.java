@@ -66,7 +66,7 @@ public class CouponBatch extends BaseAuditEntity {
     @Column(nullable = false)
     private BatchStatus batchStatus;
 
-    @Builder
+    @Builder(access = AccessLevel.PROTECTED)
     private CouponBatch(Long id, CouponInventory couponInventory, String batchName, Integer batchNumber, Integer issueCount, IssueType issueType, LocalDateTime validFromAt, LocalDateTime validUntilAt, BatchStatus batchStatus) {
         this.id = id;
         this.couponInventory = couponInventory;
