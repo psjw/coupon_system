@@ -77,22 +77,23 @@ public class Event extends BaseAuditEntity {
     }
 
     @Builder(access = AccessLevel.PROTECTED)
-    private Event(String eventName, String description, LocalDateTime fromAt, LocalDateTime untilAt, EventStatus eventStatus) {
+    private Event(String eventName, String description, LocalDateTime fromAt, LocalDateTime untilAt, EventStatus eventStatus, Boolean isDeleted) {
         this.eventName = eventName;
         this.description = description;
         this.fromAt = fromAt;
         this.untilAt = untilAt;
         this.eventStatus = eventStatus;
         this.isDeleted = isDeleted;
-        this.deletedAt = deletedAt;
     }
 
-    public static Event of(String eventName, String description, LocalDateTime fromAt, LocalDateTime untilAt) {
+    public static Event of(String eventName, String description, LocalDateTime fromAt, LocalDateTime untilAt, EventStatus eventStatus) {
         return Event.builder()
                 .eventName(eventName)
                 .description(description)
                 .fromAt(fromAt)
                 .untilAt(untilAt)
+                .eventStatus(eventStatus)
+                .isDeleted(false)
                 .build();
     }
 }
