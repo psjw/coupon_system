@@ -59,7 +59,7 @@ public class CouponCode extends BaseAuditEntity {
     @OneToOne(mappedBy = "couponCode")
     private CouponMapping couponMapping;
 
-    @Builder
+    @Builder(access = AccessLevel.PROTECTED)
     private CouponCode(Long id, String couponCode, CouponBatch couponBatch, CodeStatus codeStatus, LocalDateTime issuedAt, LocalDateTime expiredAt, CouponMapping couponMapping) {
         this.id = id;
         this.couponCode = couponCode;
