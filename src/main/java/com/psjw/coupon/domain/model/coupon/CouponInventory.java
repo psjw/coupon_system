@@ -15,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import java.time.LocalDateTime;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -67,5 +68,29 @@ public class CouponInventory extends BaseAuditEntity {
 
     private boolean cannotDelete() {
         return this.inventoryStatus == InventoryStatus.ONGOING  || this.inventoryStatus == InventoryStatus.END;
+    }
+
+
+    @Builder(access = AccessLevel.PROTECTED)
+    private CouponInventory(Event event, String inventoryName, Integer totalCount, LocalDateTime usableFormAt, LocalDateTime usableUntilAt, InventoryStatus inventoryStatus, Boolean isDeleted, LocalDateTime isDeletedAt) {
+        this.event = event;
+        this.inventoryName = inventoryName;
+        this.totalCount = totalCount;
+        this.usableFormAt = usableFormAt;
+        this.usableUntilAt = usableUntilAt;
+        this.inventoryStatus = inventoryStatus;
+        this.isDeleted = isDeleted;
+        this.isDeletedAt = isDeletedAt;
+    }
+
+    public static CouponInventory of(Event event, String inventoryName, Integer totalCount, LocalDateTime usableFormAt, LocalDateTime usableUntilAt, InventoryStatus inventoryStatus) {
+        return CouponInventory.builder()
+                .event(event)
+                .inventoryName(inventoryName)
+                .totalCount(totalCount)
+                .usableFormAt(usableFormAt)
+                .usableUntilAt(usableUntilAt)
+                .inventoryStatus(inventoryStatus)
+                .build();
     }
 }
