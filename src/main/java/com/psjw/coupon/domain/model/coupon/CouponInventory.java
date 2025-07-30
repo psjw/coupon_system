@@ -91,6 +91,7 @@ public class CouponInventory extends BaseAuditEntity {
                 .usableFormAt(usableFormAt)
                 .usableUntilAt(usableUntilAt)
                 .inventoryStatus(inventoryStatus)
+                .isDeleted(false)
                 .build();
     }
 }
