@@ -75,7 +75,7 @@ public class CouponBatchJob extends BaseAuditEntity {
         return this.jobStatus == JobStatus.IN_PROGRESS;
     }
 
-    @Builder
+    @Builder(access = AccessLevel.PROTECTED)
     private CouponBatchJob(CouponBatch couponBatch, JobType jobType, JobStatus jobStatus, String requestedBy, LocalDateTime requestedAt, LocalDateTime completedAt, Long id, Integer totalCount, Integer successCount, Integer failureCount, String errorMessage, String errorLogPath) {
         this.couponBatch = couponBatch;
         this.jobType = jobType;
