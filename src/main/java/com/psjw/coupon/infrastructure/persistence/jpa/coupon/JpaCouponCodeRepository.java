@@ -4,10 +4,12 @@ import com.psjw.coupon.domain.model.coupon.CouponBatch;
 import com.psjw.coupon.domain.model.coupon.CouponCode;
 import com.psjw.coupon.domain.repository.coupon.CouponCodeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 @RequiredArgsConstructor
 public class JpaCouponCodeRepository implements CouponCodeRepository {
 
