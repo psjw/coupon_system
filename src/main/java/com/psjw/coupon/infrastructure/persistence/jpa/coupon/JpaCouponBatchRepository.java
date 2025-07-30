@@ -6,7 +6,9 @@ import com.psjw.coupon.domain.repository.coupon.CouponBatchRepository;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
+@Repository
 @RequiredArgsConstructor
 public class JpaCouponBatchRepository implements CouponBatchRepository {
     private final CouponBatchJpaRepository couponBatchJpaRepository;
