@@ -5,29 +5,31 @@ import com.psjw.coupon.domain.repository.coupon.CouponInventoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class JpaCouponInventoryRepository implements CouponInventoryRepository {
 
-    private final CouponInventoryRepository couponInventoryRepository;
+    private final CouponInventoryJpaRepository couponInventoryJpaRepository;
 
     @Override
     public CouponInventory save(CouponInventory couponInventory) {
-        return couponInventoryRepository.save(couponInventory);
+        return couponInventoryJpaRepository.save(couponInventory);
     }
 
     @Override
     public void delete(CouponInventory couponInventory) {
-        couponInventoryRepository.delete(couponInventory);
+        couponInventoryJpaRepository.delete(couponInventory);
     }
 
     @Override
-    public CouponInventory findById(Long inventoryId) {
-        return couponInventoryRepository.findById(inventoryId);
+    public Optional<CouponInventory> findById(Long inventoryId) {
+        return couponInventoryJpaRepository.findById(inventoryId);
     }
 
     @Override
     public boolean existsById(Long inventoryId) {
-        return couponInventoryRepository.existsById(inventoryId);
+        return couponInventoryJpaRepository.existsById(inventoryId);
     }
 }
